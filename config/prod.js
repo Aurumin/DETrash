@@ -1,3 +1,3 @@
 module.exports = {
-  mongoURL: "mongodb://localhost/SkillDB"
+  mongoURL: "mongodb://localhost/DETrash"
 };
