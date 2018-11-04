@@ -24,6 +24,9 @@ const UserSchema = new Schema({
     type: String, 
     default: 0
   },
+  friends: {
+    type: [String]
+  },
   challenges: {
     type: [],
     id: {
@@ -31,7 +34,6 @@ const UserSchema = new Schema({
     },
     started: {
       type: Date,
-      required: true
     },
     finished: {
       type: Date

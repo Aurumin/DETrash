@@ -1,5 +1,5 @@
 const User = require("../models/user");
 
-module.exports = async StudentProps => {
-  return await new User(StudentProps).save();
+module.exports = async UserProps => {
+  return await new User(UserProps).save();
 };

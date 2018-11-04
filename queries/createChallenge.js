@@ -1,5 +1,5 @@
-const User = require("../models/challenge");
+const Challenge = require("../models/challenge");
 
 module.exports = async ChallengeProps => {
-  return await new User(ChallengeProps).save();
+  return await new Challenge(ChallengeProps).save();
 };
