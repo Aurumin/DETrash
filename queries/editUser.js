@@ -16,7 +16,13 @@ module.exports = {
 
     async updateUsage(userID, challengeID, date, done) {
         
-        // return await User.findOne({id: userID});
-        // .challenges.findByIdAndUpdate(challengeID, {$push: {entries: {date, done}}})
+        return await User.findOneAndUpdate(
+            {"_id": userID, "challenges._id": challengeID },
+            {
+                "$push": {
+                    "challenges.$.entries": {date, done}
+                }
+            }
+        )       // .challenges.findByIdAndUpdate(challengeID, {$push: {entries: {date, done}}})
     }   
   };

@@ -24,6 +24,8 @@ module.exports = app => {
   app.post("/api/challenges/quit", userController.quitChallenge);
   app.post("/api/challenges/create", challengeController.createChallenge);
   app.post("/api/challenges/updateUsage", userController.updateUsage);
+  app.post("/api/challenges/listOne", challengeController.listOne);
+  app.post("/api/challenges/getLocation", challengeController.getLocation);
 
   // Groups
   // GET
