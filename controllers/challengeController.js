@@ -1,23 +1,15 @@
-const Mongoose = require("mongoose");
-
-const User = require("../models/user");
-
 const Create = require("../queries/createChallenge");
+const Challenges = require("../models/challenge");
 
 module.exports = {
-  async createExampleChallenge(req, res) {
+  async createChallenge (req, res) {
+    await Create.CreateChallenge(req.body);
+    res.send("Challenge created");
+  },
+
+  async listChallenges(req, res) {
     res.send(
-      await Create({
-        name: "Example Challenge",
-        description: "First Challenge",
-        type: "userChallenge",
-        points: 10,
-        duration: 3,
-        location: {
-            city: "Berlin",
-            country: "Germany"
-        }
-      })
-    );
+      await Challenges.find({})
+      );
   }
 };

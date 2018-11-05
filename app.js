@@ -15,9 +15,11 @@ mongoose.connect(
 
 // Start app with express
 const app = express();
-app.use(bodyParser);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 // Use router
 dataRoutes(app);
+
 
 module.exports = app;

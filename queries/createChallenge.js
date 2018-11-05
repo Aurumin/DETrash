@@ -1,5 +1,7 @@
 const Challenge = require("../models/challenge");
 
-module.exports = async ChallengeProps => {
-  return await new Challenge(ChallengeProps).save();
+module.exports = {
+  async CreateChallenge (ChallengeProps) {
+    return await new Challenge(ChallengeProps).save();
+  } 
 };

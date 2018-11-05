@@ -8,7 +8,7 @@ module.exports = {
       .sort({ lastName: 1 });
   },
 
-  async specific (userProps) {
-    return await user.findOne(userProps);
+  async specific (userID) {    
+    return await User.findById(userID)
   }
 };
